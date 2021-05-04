@@ -18,4 +18,4 @@
 - masukan perintah $ cp .env.example .env
 - setting env agar bisa terhubung dengan database production
 - masukan perintah $ php artisan key:generate
-- masukan perintah $ php artisan migrate:refresh
+- masukan perintah $ php artisan migrate
