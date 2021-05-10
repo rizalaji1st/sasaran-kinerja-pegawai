@@ -26,6 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::namespace('Admin')
         ->prefix('admin')
         ->name('admin.')
+        ->middleware('can:are-admin')
         ->group(function (){
             Route::get('/', [AdminController::class, 'index']);
             Route::namespace('ManajemenAkun')

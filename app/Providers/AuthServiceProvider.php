@@ -29,12 +29,12 @@ class AuthServiceProvider extends ServiceProvider
             return $user->hasRole('admin');
         });
 
-        Gate::define('are-writer',function($user){
-            return $user->hasRole('writer');
+        Gate::define('are-pegawai',function($user){
+            return $user->hasRole('pegawai');
         });
 
-        Gate::define('admin-writer',function($user){
-            return $user->hasAnyRoles(['writer','admin']);
+        Gate::define('admin-pegawai',function($user){
+            return $user->hasAnyRoles(['pegawai','admin']);
         });
     }
 }
