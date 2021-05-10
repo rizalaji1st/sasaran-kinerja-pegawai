@@ -17,15 +17,15 @@ class CreatePegawaiTable extends Migration
             $table->bigIncrements('id');
             $table->string('nama');
             $table->string('kode_pegawai');
-            $table->bigInteger('id_unit');
+            $table->unsignedBigInteger('id_unit');
             $table->string('alamat');
-            $table->bigInteger('id_jabatan');
-            $table->bigInteger('id_user');
+            $table->unsignedBigInteger('id_jabatan');
+            $table->unsignedBigInteger('id_user');
             $table->integer('is_active');
             $table->dateTime('inserted_at');
-            $table->bigInteger('inserted_by');
+            $table->unsignedBigInteger('inserted_by');
             $table->dateTime('edited_at');
-            $table->bigInteger('edited_by');
+            $table->unsignedBigInteger('edited_by');
             $table->timestamps();
         });
     }

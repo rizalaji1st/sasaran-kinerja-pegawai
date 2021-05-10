@@ -15,7 +15,7 @@ class CreateSkpRealisasiTable extends Migration
     {
         Schema::create('skp_realisasi', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_skp_target');
+            $table->unsignedBigInteger('id_skp_target');
             $table->dateTime('tanggal_awal');
             $table->dateTime('tanggal_akhir');
             $table->string('lokasi');
@@ -23,9 +23,9 @@ class CreateSkpRealisasiTable extends Migration
             $table->string('keterangan');
             $table->string('path_bukti');
             $table->dateTime('inserted_at');
-            $table->bigInteger('inserted_by');
+            $table->unsignedBigInteger('inserted_by');
             $table->dateTime('edited_at');
-            $table->bigInteger('edited_by');
+            $table->unsignedBigInteger('edited_by');
             $table->timeStamps();
         });
     }

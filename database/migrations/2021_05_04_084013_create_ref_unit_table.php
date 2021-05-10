@@ -16,13 +16,13 @@ class CreateRefUnitTable extends Migration
         Schema::create('ref_unit', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
-            $table->bigInteger('id_unit_parent')->nullable();
+            $table->unsignedBigInteger('id_unit_parent')->nullable();
             $table->integer('level');
             $table->integer('is_active');
             $table->dateTime('inserted_at');
-            $table->bigInteger('inserted_by');
+            $table->unsignedBigInteger('inserted_by');
             $table->dateTime('edited_at');
-            $table->bigInteger('edited_by');
+            $table->unsignedBigInteger('edited_by');
             $table->timeStamps();
         });
     }

@@ -15,14 +15,14 @@ class CreateUraianPekerjaanJabatanTable extends Migration
     {
         Schema::create('uraian_pekerjaan_jabatan', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_jabatan');
-            $table->bigInteger('id_uraian_pekerjaan');
+            $table->unsignedBigInteger('id_jabatan');
+            $table->unsignedBigInteger('id_uraian_pekerjaan');
             $table->unique(['id_jabatan','id_uraian_pekerjaan']);
             $table->integer('is_active');
             $table->dateTime('inserted_at');
-            $table->bigInteger('inserted_by');
+            $table->unsignedBigInteger('inserted_by');
             $table->dateTime('edited_at');
-            $table->bigInteger('edited_by');
+            $table->unsignedBigInteger('edited_by');
             $table->timeStamps();
         });
     }

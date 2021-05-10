@@ -19,9 +19,9 @@ class CreateRefJabatanTable extends Migration
             $table->string('keterangan');
             $table->integer('is_active');
             $table->dateTime('inserted_at');
-            $table->bigInteger('inserted_by');
+            $table->unsignedBigInteger('inserted_by');
             $table->dateTime('edited_at');
-            $table->bigInteger('edited_by');
+            $table->unsignedBigInteger('edited_by');
             $table->timestamps();
         });
     }
