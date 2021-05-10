@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Eloquent;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,8 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Eloquent::unguard();
+
+        //disable foreign key check for this connection before running seeders
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         // \App\Models\User::factory(10)->create();
         $this->call(RolesTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }
