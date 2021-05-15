@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call(RolesTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(UraianPekerjaanSeeder::class);
+
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
