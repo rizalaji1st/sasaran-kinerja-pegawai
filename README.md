@@ -29,6 +29,13 @@
 - masukan perintah $ php artisan key:generate
 - masukan perintah $ php artisan migrate
 
+## Cara Melakukan Input Data Dummy Ke Database
+
+- Pastikan seeder sudah ada / sudah dibuat
+- Masuk ke direktori hasil clone, nyalakan database
+- Masukkan perintah php artisan db:seed
+- Jika ingin melakukan seeding per tabel, gunakan perintah php artisan db:seed --class=namaSeederTabel
+
 ## Link Spreadsheet
 
 - https://docs.google.com/spreadsheets/d/18HU588JxRaIEx4PoudgM8aHxUY_6um5fDV8a3R5QYpo/edit#gid=1788905879 
