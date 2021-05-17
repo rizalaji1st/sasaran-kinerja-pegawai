@@ -17,25 +17,82 @@ class UraianPekerjaanSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create();
         $users = User::all()->pluck('id')->toArray();
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('uraian_pekerjaan')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
  
-    	foreach (range(1,20) as $index) {
     	    // insert data ke table uraian_pekerjaan menggunakan Faker
-    		DB::table('uraian_pekerjaan')->insert([ 	
-                'uraian' => $faker->jobTitle,	
-                'keterangan' => $faker->text,	
-                'poin' => $faker->randomDigitNotNull,	
-                'is_active'	 => $faker->boolean,
-                'satuan' => $faker->company,	
-                'inserted_at' => $faker->dateTime(),	
-                'inserted_by' => $faker->randomElement($users),	//reference foreign key dari tabel user
-                'edited_at' => $faker->dateTime(),	
-                'edited_by' => $faker->randomElement($users)	
-    		]);
-        }
+    	DB::table('uraian_pekerjaan')->insert([ 	
+            'uraian' => 'Menetapkan kegiatan Sosialisasi UU Aparatur Sipil Negara.',	
+            'keterangan' => 'Eselon I',	
+            'poin' => '10.50',	
+            'is_active'	=> '1',
+            'satuan' => 'Kelurahan',	
+            'inserted_at' => '2020-01-02 14:54:31',	
+            'inserted_by' => '1',	//reference foreign key dari tabel user
+            'edited_at' => '2020-02-04 04:20:00',	
+            'edited_by' => '1'	//reference foreign key dari tabel user
+    	]);
+
+        DB::table('uraian_pekerjaan')->insert([ 	
+            'uraian' => 'Menetapkan Perjanjian Kinerja Deputi Akuntabilitas Kinerja.',	
+            'keterangan' => 'Eselon I',	
+            'poin' => '4.0',	
+            'is_active'	 => '1',
+            'satuan' => 'Desa',	
+            'inserted_at' => '2020-01-03 15:00:00',	
+            'inserted_by' => '1',	//reference foreign key dari tabel user
+            'edited_at' => '2020-02-04 04:20:00',	
+            'edited_by' => '1'	//reference foreign key dari tabel user
+    	]);
+
+        DB::table('uraian_pekerjaan')->insert([ 	
+            'uraian' => 'Menetapkan rumusan peraturan perundang-undangan di bidang Kepegawaian.',	
+            'keterangan' => 'Eselon I',	
+            'poin' => '2.5',	
+            'is_active'	 => '1',
+            'satuan' => 'Kecamatan',	
+            'inserted_at' => '2020-01-03 16:10:00',	
+            'inserted_by' => '1',	//reference foreign key dari tabel user
+            'edited_at' => '2020-02-04 04:20:00',	
+            'edited_by' => '1'	//reference foreign key dari tabel user
+    	]);
+
+        DB::table('uraian_pekerjaan')->insert([ 	
+            'uraian' => 'Menyelenggarakan sosialisasi UU Aparatur Sipil Negara.',	
+            'keterangan' => 'Eselon II',	
+            'poin' => '9.25',	
+            'is_active'	 => '1',
+            'satuan' => 'Kecamatan',	
+            'inserted_at' => '2020-01-03 16:10:00',	
+            'inserted_by' => '1',	//reference foreign key dari tabel user
+            'edited_at' => '2020-02-04 04:20:00',	
+            'edited_by' => '1'	//reference foreign key dari tabel user
+    	]);
+
+        DB::table('uraian_pekerjaan')->insert([ 	
+            'uraian' => 'Melaksanakan Rapat koordinasi dengan unit kerja lain dalam rangka penyusunan Perjanjian Kinerja SKPD.',	
+            'keterangan' => 'Eselon III',	
+            'poin' => '12.30',	
+            'is_active'	 => '1',
+            'satuan' => 'Kecamatan',	
+            'inserted_at' => '2020-02-04 07:30:00',	
+            'inserted_by' => '1',	//reference foreign key dari tabel user
+            'edited_at' => '2020-02-04 04:20:00',	
+            'edited_by' => '1'	//reference foreign key dari tabel user
+    	]);
+
+        DB::table('uraian_pekerjaan')->insert([ 	
+            'uraian' => 'Menyiapkan bahan penyusunan Perjanjian Kinerja.',	
+            'keterangan' => 'Eselon III',	
+            'poin' => '7.40',	
+            'is_active'	 => '1',
+            'satuan' => 'Kecamatan',	
+            'inserted_at' => '2020-02-04 04:20:00',	
+            'inserted_by' => '1',	//reference foreign key dari tabel user
+            'edited_at' => '2020-02-04 04:20:00',	
+            'edited_by' => '1'	//reference foreign key dari tabel user
+    	]);
     }
 }
