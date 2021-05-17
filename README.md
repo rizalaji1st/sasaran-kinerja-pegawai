@@ -19,6 +19,7 @@
 
 ## Cara Clone Project
 
+- Install composer terlebih dahulu
 - Clone seperti biasa
 - Masuk ke direktori hasil clone menggunakan terminal/powershell
 - masukan perintah $ composer install
@@ -32,8 +33,10 @@
 ## Cara Melakukan Input Data Dummy Ke Database
 
 - Pastikan seeder sudah ada / sudah dibuat
-- Masuk ke direktori hasil clone, nyalakan database
-- Masukkan perintah php artisan db:seed
+- Pastikan .env sudah diatur
+- Masuk ke direktori hasil clone pada cmd, nyalakan database
+- Buat nama database sesuai pada .env
+- Masukkan perintah php artisan db:seed pada cmd
 - Jika ingin melakukan seeding per tabel, gunakan perintah php artisan db:seed --class=namaSeederTabel
 
 ## Link Spreadsheet
