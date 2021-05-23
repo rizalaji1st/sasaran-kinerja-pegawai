@@ -82,7 +82,7 @@ class RefUnitSeeder extends Seeder
 
         $refUnit = RefUnit::where('nama','rektorat') -> first();
         RefUnit::create([
-            'nama' => 'UPT PusKom',
+            'nama' => 'UPT Puskom',
             'level' => 2,
             'is_active' => 1,
             'id_unit_parent' => $refUnit->id,
