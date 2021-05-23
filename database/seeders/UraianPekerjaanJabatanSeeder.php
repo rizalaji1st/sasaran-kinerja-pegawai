@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\UraianPekerjaan;
 use App\Models\UraianPekerjaanJabatan;
+use Carbon\Carbon;
+
 
 class UraianPekerjaanJabatanSeeder extends Seeder
 {
@@ -21,14 +23,15 @@ class UraianPekerjaanJabatanSeeder extends Seeder
         $user = User::where('email','admin@admin.com')->first();
         
         $uraian_pekerjaan = UraianPekerjaan::where('uraian','Melaksanakan Perkuliahan')->first();
+        $jabatan = RefJabatan::where('nama','Dosen')->first();
         UraianPekerjaanJabatan::create([ 	
-            'id_jabatan' => 'Melaksanakan Perkuliahan',	
-            'id_uraian_pekerjaan' => 'Tiap 10 sks pertama 1 poin ',	
+            'id_jabatan'=> $uraian_pekerjaan->id,	
+            'id_uraian_pekerjaan' => $jabatan->id,	
             'is_active'	=> 1,
             'inserted_at' => Carbon::now(),	
             'inserted_by' => $user->id,
             'edited_at' => Carbon::now(),	
-            'edited_by' => $user->id,
+            'edited_by' => $user->id
     	]);
 
 

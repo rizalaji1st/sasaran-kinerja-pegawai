@@ -31,7 +31,7 @@ class UraianPekerjaanSeeder extends Seeder
             'inserted_at' => Carbon::now(),	
             'inserted_by' => $user->id,
             'edited_at' => Carbon::now(),	
-            'edited_by' => $user->id,
+            'edited_by' => $user->id
     	]);
 
        UraianPekerjaan::create([ 	
@@ -43,7 +43,7 @@ class UraianPekerjaanSeeder extends Seeder
             'inserted_at' => Carbon::now(),	
             'inserted_by' => $user->id,
             'edited_at' => Carbon::now(),	
-            'edited_by' => $user->id,
+            'edited_by' => $user->id
     	]);
 
        UraianPekerjaan::create([ 	
@@ -55,7 +55,7 @@ class UraianPekerjaanSeeder extends Seeder
             'inserted_at' => Carbon::now(),	
             'inserted_by' => $user->id,
             'edited_at' => Carbon::now(),	
-            'edited_by' => $user->id,
+            'edited_by' => $user->id
     	]);
 
        UraianPekerjaan::create([ 	
@@ -67,7 +67,7 @@ class UraianPekerjaanSeeder extends Seeder
             'inserted_at' => Carbon::now(),	
             'inserted_by' => $user->id,
             'edited_at' => Carbon::now(),	
-            'edited_by' => $user->id,
+            'edited_by' => $user->id
     	]);
 
        UraianPekerjaan::create([ 	
@@ -79,7 +79,7 @@ class UraianPekerjaanSeeder extends Seeder
             'inserted_at' => Carbon::now(),
             'inserted_by' => $user->id,
             'edited_at' => Carbon::now(),	
-            'edited_by' => $user->id,
+            'edited_by' => $user->id
     	]);
 
        UraianPekerjaan::create([ 	
@@ -91,7 +91,7 @@ class UraianPekerjaanSeeder extends Seeder
             'inserted_at' => Carbon::now(),
             'inserted_by' => $user->id,
             'edited_at' => Carbon::now(),	
-            'edited_by' => $user->id,
+            'edited_by' => $user->id
     	]);
 
         UraianPekerjaan::create([ 	
@@ -103,7 +103,7 @@ class UraianPekerjaanSeeder extends Seeder
             'inserted_at' => Carbon::now(),
             'inserted_by' => $user->id,
             'edited_at' => Carbon::now(),	
-            'edited_by' => $user->id,
+            'edited_by' => $user->id
     	]);
 
         UraianPekerjaan::create([ 	
@@ -115,7 +115,7 @@ class UraianPekerjaanSeeder extends Seeder
             'inserted_at' => Carbon::now(),
             'inserted_by' => $user->id,
             'edited_at' => Carbon::now(),	
-            'edited_by' => $user->id,
+            'edited_by' => $user->id
     	]);
 
     }
