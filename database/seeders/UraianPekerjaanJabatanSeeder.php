@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\UraianPekerjaan;
 use App\Models\UraianPekerjaanJabatan;
+use Carbon\Carbon;
 
 class UraianPekerjaanJabatanSeeder extends Seeder
 {

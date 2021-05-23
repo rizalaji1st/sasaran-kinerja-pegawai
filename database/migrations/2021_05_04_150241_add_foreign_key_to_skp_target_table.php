@@ -14,10 +14,10 @@ class AddForeignKeyToSkpTargetTable extends Migration
     public function up()
     {
         Schema::table('skp_target', function (Blueprint $table) {
-            $table->foreign('id_pegawai')->references('id')->on('pegawai');
-            $table->foreign('id_uraian_pekerjaan_jabatan')->references('id')->on('uraian_pekerjaan_jabatan');
-            $table->foreign('inserted_by')->references('id')->on('users');
-            $table->foreign('edited_by')->references('id')->on('users');
+            $table->foreign('id_pegawai')->references('id')->on('pegawai')->onDelete('cascade');
+            $table->foreign('id_uraian_pekerjaan_jabatan')->references('id')->on('uraian_pekerjaan_jabatan')->onDelete('cascade');
+            $table->foreign('inserted_by')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('edited_by')->references('id')->on('users')->onDelete('set null');
         });
     }
 

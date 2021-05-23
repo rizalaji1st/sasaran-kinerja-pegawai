@@ -14,8 +14,8 @@ class AddForeignKeyToRefJabatanTable extends Migration
     public function up()
     {
         Schema::table('ref_jabatan', function (Blueprint $table) {
-            $table->foreign('inserted_by')->references('id')->on('users');
-            $table->foreign('edited_by')->references('id')->on('users');
+            $table->foreign('inserted_by')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('edited_by')->references('id')->on('users')->onDelete('set null');
         });
     }
 

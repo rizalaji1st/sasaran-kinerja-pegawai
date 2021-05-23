@@ -14,9 +14,9 @@ class AddForeignKeyToSkpRealisasiTable extends Migration
     public function up()
     {
         Schema::table('skp_realisasi', function (Blueprint $table) {
-            $table->foreign('id_skp_target')->references('id')->on('skp_target');
-            $table->foreign('inserted_by')->references('id')->on('users');
-            $table->foreign('edited_by')->references('id')->on('users');
+            $table->foreign('id_skp_target')->references('id')->on('skp_target')->onDelete('cascade');
+            $table->foreign('inserted_by')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('edited_by')->references('id')->on('users')->onDelete('set null');
         });
     }
 

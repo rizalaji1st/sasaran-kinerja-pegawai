@@ -14,10 +14,10 @@ class AddForeignKeyToUraianPekerjaanJabatanTable extends Migration
     public function up()
     {
         Schema::table('uraian_pekerjaan_jabatan', function (Blueprint $table) {
-            $table->foreign('id_jabatan')->references('id')->on('ref_jabatan');
-            $table->foreign('id_uraian_pekerjaan')->references('id')->on('uraian_pekerjaan');
-            $table->foreign('inserted_by')->references('id')->on('users');
-            $table->foreign('edited_by')->references('id')->on('users');
+            $table->foreign('id_jabatan')->references('id')->on('ref_jabatan')->onDelete('cascade');
+            $table->foreign('id_uraian_pekerjaan')->references('id')->on('uraian_pekerjaan')->onDelete('cascade');
+            $table->foreign('inserted_by')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('edited_by')->references('id')->on('users')->onDelete('set null');
         });
     }
 
