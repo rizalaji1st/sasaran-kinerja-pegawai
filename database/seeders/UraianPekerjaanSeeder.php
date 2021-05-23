@@ -36,18 +36,6 @@ class UraianPekerjaanSeeder extends Seeder
 
        UraianPekerjaan::create([ 	
             'uraian' => 'Membimbing seminar mahasiswa',	
-            'keterangan' => 'Tiap semester 1 poin',	
-            'poin' => 1,	
-            'is_active'	 => 1,
-            'satuan' => 'Semester',	
-            'inserted_at' => Carbon::now(),	
-            'inserted_by' => $user->id,
-            'edited_at' => Carbon::now(),	
-            'edited_by' => $user->id
-    	]);
-
-       UraianPekerjaan::create([ 	
-            'uraian' => 'Membimbing KKN.',	
             'keterangan' => 'Tiap semester poin 1',	
             'poin' => 1,	
             'is_active'	 => 1,
@@ -59,7 +47,19 @@ class UraianPekerjaanSeeder extends Seeder
     	]);
 
        UraianPekerjaan::create([ 	
-            'uraian' => 'Membimbing dan ikut membimbing dalam menghasilkan thesis.',	
+            'uraian' => 'Membimbing KKN',	
+            'keterangan' => 'Tiap semester poin 1',	
+            'poin' => 1,	
+            'is_active'	 => 1,
+            'satuan' => 'Semester',	
+            'inserted_at' => Carbon::now(),	
+            'inserted_by' => $user->id,
+            'edited_at' => Carbon::now(),	
+            'edited_by' => $user->id
+    	]);
+
+       UraianPekerjaan::create([ 	
+            'uraian' => 'Membimbing dan ikut membimbing dalam menghasilkan thesis',	
             'keterangan' => 'Tiap bimbingan poin 3',	
             'poin' => 3,	
             'is_active'	 => 1,
@@ -71,7 +71,7 @@ class UraianPekerjaanSeeder extends Seeder
     	]);
 
        UraianPekerjaan::create([ 	
-            'uraian' => 'Bertugas sebagai penguji pada ujian akhir sebagai anggota.',	
+            'uraian' => 'Bertugas sebagai penguji pada ujian akhir sebagai anggota',	
             'keterangan' => 'Tiap kegiatan poin 0.5',	
             'poin' => 0.5,	
             'is_active'	 => 1,
@@ -83,7 +83,7 @@ class UraianPekerjaanSeeder extends Seeder
     	]);
 
        UraianPekerjaan::create([ 	
-            'uraian' => 'Membina kegiatan mahasiswa di bidang akademik dan kemahasiswaan.',	
+            'uraian' => 'Membina kegiatan mahasiswa di bidang akademik dan kemahasiswaan',	
             'keterangan' => 'Tiap semester poin 2',	
             'poin' => 2,	
             'is_active'	 => 1,
@@ -95,7 +95,7 @@ class UraianPekerjaanSeeder extends Seeder
     	]);
 
         UraianPekerjaan::create([ 	
-            'uraian' => 'Melaksanakan datasering.',	
+            'uraian' => 'Melaksanakan datasering',	
             'keterangan' => 'Tiap semester poin 5',	
             'poin' => 5,	
             'is_active'	 => 1,
@@ -107,7 +107,7 @@ class UraianPekerjaanSeeder extends Seeder
     	]);
 
         UraianPekerjaan::create([ 	
-            'uraian' => 'Melaksanakan pengembangan hasil pendidikan dan penelitian yang berguna bagi masyarakat.',	
+            'uraian' => 'Melaksanakan pengembangan hasil pendidikan dan penelitian yang berguna bagi masyarakat',	
             'keterangan' => 'Tiap semester poin 3',	
             'poin' => 3,	
             'is_active'	 => 1,

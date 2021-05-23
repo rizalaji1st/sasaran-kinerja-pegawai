@@ -9,7 +9,7 @@ class UraianPekerjaanJabatan extends Model
 {
     use HasFactory;
 
-    protected $table = 'uraian_pekerjaan';
+    protected $table = 'uraian_pekerjaan_jabatan';
 	protected $primaryKey = 'id';
 	protected $fillable = [
 		'id_jabatan',
