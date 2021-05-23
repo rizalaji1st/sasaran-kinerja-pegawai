@@ -5,5 +5,5 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('title')</title>
 
-  @include('includes.admin.style')
+  @include('includes.adminLTE.style')
 </head>

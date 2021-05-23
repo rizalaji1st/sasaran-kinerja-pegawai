@@ -1,7 +1,7 @@
 @extends('layouts.adminLTE')
-@section('title','Beranda admin')
-@section('content-header', 'Beranda admin')
-@section('route-first','Admin')
+@section('title','Beranda pegawai')
+@section('content-header', 'Beranda pegawai')
+@section('route-first','Pegawai')
 @section('route-second','Beranda')
 @section('content')
     <!-- Default box -->

@@ -1,10 +1,10 @@
-@include('includes.admin.header')
+@include('includes.adminLTE.header')
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
-  @include('includes.admin.navbar')
+  @include('includes.adminLTE.navbar')
 
-  @include('includes.admin.sidebar')
+  @include('includes.adminLTE.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -34,7 +34,7 @@
   </div>
   <!-- /.content-wrapper -->
 
-  @include('includes.admin.footer')
+  @include('includes.adminLTE.footer')
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -44,7 +44,7 @@
 </div>
 <!-- ./wrapper -->
 
-@include('includes.admin.script')
+@include('includes.adminLTE.script')
 @yield('js')
 </body>
 </html>

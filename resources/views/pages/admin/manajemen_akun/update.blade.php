@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.adminLTE')
 @section('title','Update Akun')
 @section('manajemenAkunActive', 'menu-open')
 @section('content-header', 'Update Akun')
