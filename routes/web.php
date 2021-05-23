@@ -51,6 +51,6 @@ Route::namespace('Admin')
                     Route::post('/create/{user}/store', [ManajemenPegawaiController::class, 'store']);
                     Route::get('/update/{pegawai}', [ManajemenPegawaiController::class, 'update']);
                     Route::post('/update/{pegawai}/store', [ManajemenPegawaiController::class, 'updateStore']);
-                    Route::post('/delete/{user}', [ManajemenPegawaiController::class, 'delete']);
+                    Route::post('/delete/{pegawai}', [ManajemenPegawaiController::class, 'delete']);
                 });
         });

@@ -65,4 +65,10 @@ class ManajemenPegawaiController extends Controller
 
         return redirect('/admin/manajemen-pegawai')->with('success','Data Pegawai '.$pegawai->nama.' berhasil diupdate');
     }
+
+    public function delete(Pegawai $pegawai){
+        $pegawai->delete();
+
+        return redirect('/admin/manajemen-pegawai')->with('success','Data pegawai berhasil dihapus');
+    }
 }

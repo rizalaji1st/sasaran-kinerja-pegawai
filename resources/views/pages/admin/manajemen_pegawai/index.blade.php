@@ -35,8 +35,8 @@
                     <th>
                         @if ($user->pegawai)
                             <a class="btn btn-sm btn-warning" href="{{url('admin/manajemen-pegawai/update/'.$user->pegawai->id)}}">Edit</a>
-                            <button class="btn btn-sm btn-danger" onclick="sweetDelete('{{$user->id}}')">Delete</button> 
-                            <form method="POST" action="{{url('/admin/manajemen-akun/delete/'.$user->id)}}" id="delete{{$user->id}}">
+                            <button class="btn btn-sm btn-danger" onclick="sweetDelete('{{$user->pegawai->id}}')">Delete</button> 
+                            <form method="POST" action="{{url('/admin/manajemen-pegawai/delete/'.$user->pegawai->id)}}" id="delete{{$user->pegawai->id}}">
                                 @csrf
                             </form>
                         @else
@@ -55,7 +55,7 @@
             $('#myTable').DataTable();
         } );
 
-        function sweetDelete(user){
+        function sweetDelete(pegawai){
             swal({
                 title: "Konfirmasi",
                 text: "Apakah anda yakin?",
@@ -65,7 +65,7 @@
                 })
                 .then((willDelete) => {
                 if (willDelete) {
-                    document.getElementById("delete"+user).submit();
+                    document.getElementById("delete"+pegawai).submit();
                 } else {
                     swal("Ok");
                 }
