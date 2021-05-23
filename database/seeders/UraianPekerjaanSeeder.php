@@ -18,81 +18,105 @@ class UraianPekerjaanSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('uraian_pekerjaan')->truncate();
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+       
+        UraianPekerjaan::query()->delete();
         $user = User::where('email','admin@admin.com')->first();
 
-    	DB::table('uraian_pekerjaan')->insert([ 	
-            'uraian' => 'Menetapkan kegiatan Sosialisasi UU Aparatur Sipil Negara.',	
-            'keterangan' => 'Eselon I',	
-            'poin' => '10.50',	
+    	UraianPekerjaan::create([ 	
+            'uraian' => 'Melaksanakan Perkuliahan',	
+            'keterangan' => 'Tiap 10 sks pertama 1 poin ',	
+            'poin' => 1,	
             'is_active'	=> 1,
-            'satuan' => 'Kelurahan',	
+            'satuan' => 'SKS',	
             'inserted_at' => Carbon::now(),	
             'inserted_by' => $user->id,
             'edited_at' => Carbon::now(),	
             'edited_by' => $user->id,
     	]);
 
-        DB::table('uraian_pekerjaan')->insert([ 	
-            'uraian' => 'Menetapkan Perjanjian Kinerja Deputi Akuntabilitas Kinerja.',	
-            'keterangan' => 'Eselon I',	
-            'poin' => '4.0',	
+       UraianPekerjaan::create([ 	
+            'uraian' => 'Membimbing seminar mahasiswa',	
+            'keterangan' => 'Tiap semester 1 poin',	
+            'poin' => 1,	
             'is_active'	 => 1,
-            'satuan' => 'Desa',	
+            'satuan' => 'Semester',	
             'inserted_at' => Carbon::now(),	
             'inserted_by' => $user->id,
             'edited_at' => Carbon::now(),	
             'edited_by' => $user->id,
     	]);
 
-        DB::table('uraian_pekerjaan')->insert([ 	
-            'uraian' => 'Menetapkan rumusan peraturan perundang-undangan di bidang Kepegawaian.',	
-            'keterangan' => 'Eselon I',	
-            'poin' => '2.5',	
+       UraianPekerjaan::create([ 	
+            'uraian' => 'Membimbing KKN.',	
+            'keterangan' => 'Tiap semester poin 1',	
+            'poin' => 1,	
             'is_active'	 => 1,
-            'satuan' => 'Kecamatan',	
+            'satuan' => 'Semester',	
             'inserted_at' => Carbon::now(),	
             'inserted_by' => $user->id,
             'edited_at' => Carbon::now(),	
             'edited_by' => $user->id,
     	]);
 
-        DB::table('uraian_pekerjaan')->insert([ 	
-            'uraian' => 'Menyelenggarakan sosialisasi UU Aparatur Sipil Negara.',	
-            'keterangan' => 'Eselon II',	
-            'poin' => '9.25',	
+       UraianPekerjaan::create([ 	
+            'uraian' => 'Membimbing dan ikut membimbing dalam menghasilkan thesis.',	
+            'keterangan' => 'Tiap bimbingan poin 3',	
+            'poin' => 3,	
             'is_active'	 => 1,
-            'satuan' => 'Kecamatan',	
+            'satuan' => 'Bimbingan',	
             'inserted_at' => Carbon::now(),	
             'inserted_by' => $user->id,
             'edited_at' => Carbon::now(),	
             'edited_by' => $user->id,
     	]);
 
-        DB::table('uraian_pekerjaan')->insert([ 	
-            'uraian' => 'Melaksanakan Rapat koordinasi dengan unit kerja lain dalam rangka penyusunan Perjanjian Kinerja SKPD.',	
-            'keterangan' => 'Eselon III',	
-            'poin' => '12.30',	
+       UraianPekerjaan::create([ 	
+            'uraian' => 'Bertugas sebagai penguji pada ujian akhir sebagai anggota.',	
+            'keterangan' => 'Tiap kegiatan poin 0.5',	
+            'poin' => 0.5,	
             'is_active'	 => 1,
-            'satuan' => 'Kecamatan',	
+            'satuan' => 'Kegiatan',	
             'inserted_at' => Carbon::now(),
             'inserted_by' => $user->id,
             'edited_at' => Carbon::now(),	
             'edited_by' => $user->id,
     	]);
 
-        DB::table('uraian_pekerjaan')->insert([ 	
-            'uraian' => 'Menyiapkan bahan penyusunan Perjanjian Kinerja.',	
-            'keterangan' => 'Eselon III',	
-            'poin' => '7.40',	
+       UraianPekerjaan::create([ 	
+            'uraian' => 'Membina kegiatan mahasiswa di bidang akademik dan kemahasiswaan.',	
+            'keterangan' => 'Tiap semester poin 2',	
+            'poin' => 2,	
             'is_active'	 => 1,
-            'satuan' => 'Kecamatan',	
+            'satuan' => 'Semester',	
             'inserted_at' => Carbon::now(),
             'inserted_by' => $user->id,
             'edited_at' => Carbon::now(),	
             'edited_by' => $user->id,
     	]);
+
+        UraianPekerjaan::create([ 	
+            'uraian' => 'Melaksanakan datasering.',	
+            'keterangan' => 'Tiap semester poin 5',	
+            'poin' => 5,	
+            'is_active'	 => 1,
+            'satuan' => 'Semester',	
+            'inserted_at' => Carbon::now(),
+            'inserted_by' => $user->id,
+            'edited_at' => Carbon::now(),	
+            'edited_by' => $user->id,
+    	]);
+
+        UraianPekerjaan::create([ 	
+            'uraian' => 'Melaksanakan pengembangan hasil pendidikan dan penelitian yang berguna bagi masyarakat.',	
+            'keterangan' => 'Tiap semester poin 3',	
+            'poin' => 3,	
+            'is_active'	 => 1,
+            'satuan' => 'Semester',	
+            'inserted_at' => Carbon::now(),
+            'inserted_by' => $user->id,
+            'edited_at' => Carbon::now(),	
+            'edited_by' => $user->id,
+    	]);
+
     }
 }

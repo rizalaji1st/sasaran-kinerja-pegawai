@@ -18,7 +18,6 @@ class UraianPekerjaan extends Model
 		'poin',
 		'is_active',
 		'satuan',
-		'is_active',
         'inserted_by',
         'edited_by'
 	];    

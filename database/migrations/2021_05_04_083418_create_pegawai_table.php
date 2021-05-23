@@ -22,10 +22,10 @@ class CreatePegawaiTable extends Migration
             $table->unsignedBigInteger('id_jabatan');
             $table->unsignedBigInteger('id_user');
             $table->integer('is_active');
-            $table->dateTime('inserted_at');
-            $table->unsignedBigInteger('inserted_by');
-            $table->dateTime('edited_at');
-            $table->unsignedBigInteger('edited_by');
+            $table->dateTime('inserted_at')->nullable();
+            $table->unsignedBigInteger('inserted_by')->nullable();
+            $table->dateTime('edited_at')->nullable();
+            $table->unsignedBigInteger('edited_by')->nullable();
             $table->timestamps();
         });
     }
