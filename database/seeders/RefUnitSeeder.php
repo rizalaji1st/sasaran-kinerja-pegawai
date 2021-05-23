@@ -17,9 +17,7 @@ class RefUnitSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        RefUnit::truncate();
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        RefUnit::query()->delete();
 
         $user = User::where('email','admin@admin.com') -> first();
 
