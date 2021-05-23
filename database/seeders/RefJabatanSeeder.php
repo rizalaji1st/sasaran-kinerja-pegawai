@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Models\RefUnit;
+use App\Models\RefJabatan;
 use Carbon\Carbon;
 use App\Models\User;
 
