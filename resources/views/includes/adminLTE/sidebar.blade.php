@@ -31,6 +31,14 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item @yield('manajemenPegawaiActive')">
+              <a href="{{url('/admin/manajemen-pegawai')}}" class="nav-link">
+                <i class="fas fa-user-cog"></i>
+                <p>
+                  Manajemen Pegawai
+                </p>
+              </a>
+            </li>
           @endcan
           <li class="nav-header">Menu Utama</li>
         </ul>

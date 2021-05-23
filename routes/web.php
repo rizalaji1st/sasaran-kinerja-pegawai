@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ManajemenAkun\ManajemenAkunController;
+use App\Http\Controllers\Admin\ManajemenPegawai\ManajemenPegawaiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,5 +40,17 @@ Route::namespace('Admin')
                     Route::get('/update/{user}', [ManajemenAkunController::class, 'update']);
                     Route::post('/update/{user}/store', [ManajemenAkunController::class, 'updateStore']);
                     Route::post('/delete/{user}', [ManajemenAkunController::class, 'delete']);
+                });
+
+            Route::namespace('ManajemenPegawai')
+                ->prefix('manajemen-pegawai')
+                ->name('manajemen-pegawai.')
+                ->group(function(){
+                    Route::get('/', [ManajemenPegawaiController::class, 'index']);
+                    Route::get('/create/{user}', [ManajemenPegawaiController::class, 'create']);
+                    Route::post('/create/{user}/store', [ManajemenPegawaiController::class, 'store']);
+                    Route::get('/update/{pegawai}', [ManajemenPegawaiController::class, 'update']);
+                    Route::post('/update/{pegawai}/store', [ManajemenPegawaiController::class, 'updateStore']);
+                    Route::post('/delete/{user}', [ManajemenPegawaiController::class, 'delete']);
                 });
         });
