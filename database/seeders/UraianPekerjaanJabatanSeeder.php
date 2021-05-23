@@ -24,6 +24,7 @@ class UraianPekerjaanJabatanSeeder extends Seeder
         
         $uraian_pekerjaan = UraianPekerjaan::where('uraian','Melaksanakan Perkuliahan')->first();
         $jabatan = RefJabatan::where('nama','Dosen')->first();
+        
         UraianPekerjaanJabatan::create([ 	
             'id_jabatan'=> $uraian_pekerjaan->id,	
             'id_uraian_pekerjaan' => $jabatan->id,	

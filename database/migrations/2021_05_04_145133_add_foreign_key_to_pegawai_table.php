@@ -16,9 +16,9 @@ class AddForeignKeyToPegawaiTable extends Migration
         Schema::table('pegawai', function (Blueprint $table) {
             $table->foreign('id_unit')->references('id')->on('ref_unit');
             $table->foreign('id_jabatan')->references('id')->on('ref_jabatan');
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('inserted_by')->references('id')->on('users');
-            $table->foreign('edited_by')->references('id')->on('users');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('inserted_by')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('edited_by')->references('id')->on('users')->onDelete('set null');
         });
     }
 
