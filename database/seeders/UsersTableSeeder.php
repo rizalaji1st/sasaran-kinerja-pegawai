@@ -72,6 +72,36 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('tema123')
         ]);
 
+        $rektor = User::create([
+            'name' => 'rektor',
+            'email' => 'rektor@rektor.com',
+            'password' => Hash::make('rektor123')
+        ]);
+
+        $dekanMipa = User::create([
+            'name' => 'Dekan MIPA',
+            'email' => 'dekanmipa@gmail.com',
+            'password' => Hash::make('dekanmipa123')
+        ]);
+
+        $pegawaiTUUPTBahasa = User::create([
+            'name' => 'Pegawai TU UPT Bahasa',
+            'email' => 'tuuptbahasa@gmail.com',
+            'password' => Hash::make('tuuptbahasa123')
+        ]);
+
+        $staffNOCPuskom = User::create([
+            'name' => 'Staff NOC Puskom',
+            'email' => 'staffnocpuskom@gmail.com',
+            'password' => Hash::make('staffnocpuskom123')
+        ]);
+
+        $staffDevPuskom = User::create([
+            'name' => 'Staff Dev Puskom',
+            'email' => 'staffdevpuskom@gmail.com',
+            'password' => Hash::make('staffdevpuskom123')
+        ]);
+
         $admin->roles()->attach($adminRole);
         $pegawai->roles()->attach($pegawaiRole);
         $user1->roles()->attach($pegawaiRole);
@@ -80,5 +110,10 @@ class UsersTableSeeder extends Seeder
         $user4->roles()->attach($pegawaiRole);
         $user5->roles()->attach($pegawaiRole);
         $user6->roles()->attach($pegawaiRole);
+        $rektor->roles()->attach($pegawaiRole);
+        $dekanMipa->roles()->attach($pegawaiRole);
+        $pegawaiTUUPTBahasa->roles()->attach($pegawaiRole);
+        $staffNOCPuskom->roles()->attach($pegawaiRole);
+        $staffDevPuskom->roles()->attach($pegawaiRole);
     }
 }
