@@ -20,7 +20,7 @@ class PegawaiSeeder extends Seeder
     public function run()
     {
         
-        Pegawai::truncate();
+        Pegawai::query()->delete();
         
         $user = User::where('email','admin@admin.com')->first();
 
