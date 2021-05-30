@@ -47,8 +47,11 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="active" class="form-label">Is Active</label>
-                        <input type="number" name="active" class="form-control" id="active">
+                        <label for="active" class="form-label">Apakah Aktif</label>
+                        <select name="active" id="active" class="form-control">
+                            <option value="1" selected>Ya</option>
+                            <option value="0">Tidak</option>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
             </form>

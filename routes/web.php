@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ManajemenAkun\ManajemenAkunController;
 use App\Http\Controllers\Admin\ManajemenPegawai\ManajemenPegawaiController;
+use App\Http\Controllers\Admin\ManajemenUraianPekerjaan\ManajemenUraianPekerjaanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,5 +53,17 @@ Route::namespace('Admin')
                     Route::get('/update/{pegawai}', [ManajemenPegawaiController::class, 'update']);
                     Route::post('/update/{pegawai}/store', [ManajemenPegawaiController::class, 'updateStore']);
                     Route::post('/delete/{pegawai}', [ManajemenPegawaiController::class, 'delete']);
+                });
+
+            Route::namespace('ManajemenUraianPekerjaan')
+                ->prefix('manajemen-uraian-pekerjaan')
+                ->name('manajemen-uraian-pekerjaan.')
+                ->group(function(){
+                    Route::get('/', [ManajemenUraianPekerjaanController::class, 'index']);
+                    Route::get('/create', [ManajemenUraianPekerjaanController::class, 'create']);
+                    Route::post('/create/store', [ManajemenUraianPekerjaanController::class, 'store']);
+                    Route::get('/update/{uraian_pekerjaan}', [ManajemenUraianPekerjaanController::class, 'update']);
+                    Route::post('/update/{uraian_pekerjaan}/store', [ManajemenUraianPekerjaanController::class, 'updateStore']);
+                    Route::post('/delete/{uraian_pekerjaan}', [ManajemenUraianPekerjaanController::class, 'delete']);
                 });
         });
