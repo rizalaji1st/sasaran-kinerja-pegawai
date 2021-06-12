@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\UraianPekerjaan;
 
 class RefJabatan extends Model
 {
@@ -23,4 +24,8 @@ class RefJabatan extends Model
         'inserted_at',
         'edited_at'
     ];
+
+    public function uraian_pekerjaan(){
+		return $this->belongsToMany(UraianPekerjaan::class);
+	}
 }

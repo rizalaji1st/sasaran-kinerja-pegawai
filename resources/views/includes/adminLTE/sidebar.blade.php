@@ -38,11 +38,20 @@
                   Manajemen Pegawai
                 </p>
               </a>
-            </li><li class="nav-item @yield('manajemenUraianPekerjaanActive')">
+            </li>
+            <li class="nav-item @yield('manajemenUraianPekerjaanActive')">
               <a href="{{url('/admin/manajemen-uraian-pekerjaan')}}" class="nav-link">
                 <i class="fas fa-user-tag nav-icon"></i>                
                 <p>
                   Manajemen Uraian Pekerjaan
+                </p>
+              </a>
+            </li>
+            <li class="nav-item @yield('manajemenUraianPekerjaanJabatanActive')">
+              <a href="{{url('/admin/manajemen-uraian-pekerjaan-jabatan')}}" class="nav-link">
+                <i class="fas fa-user-tag nav-icon"></i>                
+                <p>
+                  Manajemen Uraian Pekerjaan Jabatan
                 </p>
               </a>
             </li>

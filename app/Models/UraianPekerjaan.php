@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\UraianPekerjaan;
+use App\Models\RefJabatan;
 
 class UraianPekerjaan extends Model
 {
@@ -32,7 +33,8 @@ class UraianPekerjaan extends Model
         return $this->belongsTo(User::class);
     }
 
-	public function uraian_pekerjaan(){
-		return $this->belongsToMany(UraianPekerjaan::class);
+    public function ref_jabatan(){
+		return $this->belongsToMany(RefJabatan::class);
 	}
+    
 }
