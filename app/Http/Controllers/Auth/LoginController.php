@@ -43,10 +43,10 @@ class LoginController extends Controller
         if ( Auth::check() ) {
             $user = Auth::user();
             if($user->hasRole('admin')){
-                $this->redirectTo = url('/admin');
+                $this->redirectTo = url('/home');
             }
             else if($user->hasRole('pegawai')){
-                $this->redirectTo = url('/');
+                $this->redirectTo = url('/home');
             }
             return $this->redirectTo;
         }

@@ -21,6 +21,15 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-header">Menu Utama</li>
+          <li class="nav-item @yield('berandaActive')">
+            <a href="{{url('/home')}}" class="nav-link">
+              <i class="fas fa-home nav-icon"></i>
+              <p>
+                Beranda
+              </p>
+            </a>
+          </li>
           @can('are-admin')
             <li class="nav-header">Menu Khusus Admin</li>
             <li class="nav-item @yield('manajemenAkunActive')">
@@ -57,7 +66,6 @@
             </li>
             
           @endcan
-          <li class="nav-header">Menu Utama</li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

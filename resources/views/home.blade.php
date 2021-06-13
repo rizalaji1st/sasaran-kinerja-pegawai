@@ -3,6 +3,7 @@
 @section('content-header', 'Beranda pegawai')
 @section('route-first','Pegawai')
 @section('route-second','Beranda')
+@section('berandaActive','menu-open')
 @section('content')
 <!-- Default box -->
 <div class="row">
