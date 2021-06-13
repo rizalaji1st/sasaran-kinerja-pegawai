@@ -28,7 +28,7 @@
                     <th>{{$ref_jabatan->nama}}</th>
                     <th>
                         <ol>
-                        @foreach ($ref_jabatan->uraian_pekerjaan as $uraian_pekerjaan)
+                        @foreach ($ref_jabatan->uraian_pekerjaans as $uraian_pekerjaan)
                             <li>{{ $uraian_pekerjaan->uraian }}</li>
                         @endforeach
                         </ol>

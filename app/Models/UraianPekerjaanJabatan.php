@@ -26,5 +26,6 @@ class UraianPekerjaanJabatan extends Model
 
     public function uraian_pekerjaan(){
         return $this->hasOne(UraianPekerjaan::class, 'uraian_pekerjaan_jabatan');
+    }
     
 }

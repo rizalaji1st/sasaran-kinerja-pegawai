@@ -24,7 +24,7 @@ class RefJabatan extends Model
         'edited_at'
     ];
 
-    public function uraian_pekerjaan_jabatan(){
-		return $this->hasMany(UraianPekerjaanJabatan::class, 'uraian_pekerjaan_jabatan');
+    public function uraian_pekerjaans(){
+		return $this->belongsToMany(UraianPekerjaan::class, 'uraian_pekerjaan_jabatan','id_jabatan','id_uraian_pekerjaan');
 	}
 }

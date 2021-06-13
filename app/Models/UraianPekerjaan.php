@@ -31,5 +31,8 @@ class UraianPekerjaan extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function jabatans(){
+		return $this->belongsToMany(RefJabatan::class, 'uraian_pekerjaan_jabatan','id_uraian_pekerjaan','id_jabatan');
+	}
     
 }
