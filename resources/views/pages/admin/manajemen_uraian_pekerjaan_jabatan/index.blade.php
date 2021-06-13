@@ -29,16 +29,11 @@
                     <th>
                         <ol>
                         @foreach ($ref_jabatan->uraian_pekerjaan as $uraian_pekerjaan)
-                            <li> {{ $uraian_pekerjaan->uraian }} </li>
+                            <li>{{ $uraian_pekerjaan->uraian }}</li>
                         @endforeach
                         </ol>
                     </th>
                     <th>
-                            <a class="btn btn-sm btn-warning" href="{{url('admin/manajemen-uraian-pekerjaan-jabatan/update/'.$uraian_pekerjaan->id)}}">Edit</a>
-                            <button class="btn btn-sm btn-danger" onclick="sweetDelete('{{$uraian_pekerjaan->id}}')">Delete</button> 
-                            <form method="POST" action="{{url('/admin/manajemen-uraian-pekerjaan/delete/'.$uraian_pekerjaan->id)}}" id="delete{{$uraian_pekerjaan->id}}">
-                                @csrf
-                            </form>
                         
                     </th>
                   </tr>

@@ -4,9 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\UraianPekerjaanJabatan;
-use App\Models\UraianPekerjaan;
-use App\Models\RefJabatan;
 
 class UraianPekerjaanJabatan extends Model
 {
@@ -26,4 +23,8 @@ class UraianPekerjaanJabatan extends Model
         'inserted_at',
         'edited_at'
     ];
+
+    public function uraian_pekerjaan(){
+        return $this->hasOne(UraianPekerjaan::class, 'uraian_pekerjaan_jabatan');
+    
 }
