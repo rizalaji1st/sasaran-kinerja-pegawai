@@ -23,4 +23,8 @@ class UraianPekerjaanJabatan extends Model
         'inserted_at',
         'edited_at'
     ];
+
+    public function uraian_pekerjaan(){
+        return $this->hasOne(UraianPekerjaan::class, 'uraian_pekerjaan_jabatan');
+    
 }

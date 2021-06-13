@@ -25,12 +25,37 @@
             <li class="nav-header">Menu Khusus Admin</li>
             <li class="nav-item @yield('manajemenAkunActive')">
               <a href="{{url('/admin/manajemen-akun')}}" class="nav-link">
-                <i class="fas fa-user-cog"></i>
+                <i class="fas fa-user-cog nav-icon"></i>
                 <p>
                   Manajemen Akun
                 </p>
               </a>
             </li>
+            <li class="nav-item @yield('manajemenPegawaiActive')">
+              <a href="{{url('/admin/manajemen-pegawai')}}" class="nav-link">
+               <i class="fas fa-address-card nav-icon"></i>
+                <p>
+                  Manajemen Pegawai
+                </p>
+              </a>
+            </li>
+            <li class="nav-item @yield('manajemenUraianPekerjaanActive')">
+              <a href="{{url('/admin/manajemen-uraian-pekerjaan')}}" class="nav-link">
+                <i class="fas fa-user-tag nav-icon"></i>                
+                <p>
+                  Manajemen Uraian Pekerjaan
+                </p>
+              </a>
+            </li>
+            <li class="nav-item @yield('manajemenUraianPekerjaanJabatanActive')">
+              <a href="{{url('/admin/manajemen-uraian-pekerjaan-jabatan')}}" class="nav-link">
+                <i class="fas fa-user-tag nav-icon"></i>                
+                <p>
+                  Manajemen Uraian Pekerjaan Jabatan
+                </p>
+              </a>
+            </li>
+            
           @endcan
           <li class="nav-header">Menu Utama</li>
         </ul>
