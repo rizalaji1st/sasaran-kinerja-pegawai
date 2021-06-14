@@ -48,6 +48,14 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item @yield('manajemenRefJabatanActive')">
+              <a href="{{url('/admin/manajemen-ref-jabatan')}}" class="nav-link">
+                <i class="fas fa-user-cog nav-icon"></i>
+                <p>
+                  Manajemen Ref Jabatan
+                </p>
+              </a>
+            </li>
             <li class="nav-item @yield('manajemenPegawaiActive')">
               <a href="{{url('/admin/manajemen-pegawai')}}" class="nav-link">
                <i class="fas fa-address-card nav-icon"></i>
