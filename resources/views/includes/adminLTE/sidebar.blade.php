@@ -40,6 +40,14 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item @yield('manajemenRefUnitActive')">
+              <a href="{{url('/admin/manajemen-ref-unit')}}" class="nav-link">
+                <i class="fas fa-user-cog nav-icon"></i>
+                <p>
+                  Manajemen Ref Unit
+                </p>
+              </a>
+            </li>
             <li class="nav-item @yield('manajemenPegawaiActive')">
               <a href="{{url('/admin/manajemen-pegawai')}}" class="nav-link">
                <i class="fas fa-address-card nav-icon"></i>

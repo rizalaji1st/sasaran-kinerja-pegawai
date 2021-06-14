@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ManajemenAkun\ManajemenAkunController;
+use App\Http\Controllers\Admin\ManajemenRefUnit\ManajemenRefUnitController;
 use App\Http\Controllers\Admin\ManajemenPegawai\ManajemenPegawaiController;
 use App\Http\Controllers\Admin\ManajemenUraianPekerjaan\ManajemenUraianPekerjaanController;
 use App\Http\Controllers\Admin\ManajemenUraianPekerjaanJabatan\ManajemenUraianPekerjaanJabatanController;
@@ -55,6 +56,18 @@ Route::namespace('Admin')
                     Route::get('/update/{pegawai}', [ManajemenPegawaiController::class, 'update']);
                     Route::post('/update/{pegawai}/store', [ManajemenPegawaiController::class, 'updateStore']);
                     Route::post('/delete/{pegawai}', [ManajemenPegawaiController::class, 'delete']);
+                });
+
+            Route::namespace('ManajemenRefUnit')
+                ->prefix('manajemen-ref-unit')
+                ->name('manajemen-ref-unit.')
+                ->group(function(){
+                    Route::get('/', [ManajemenRefUnitController::class, 'index']);
+                    Route::get('/create', [ManajemenRefUnitController::class, 'create']);
+                    Route::post('/create/store', [ManajemenRefUnitController::class, 'store']);
+                    Route::get('/update/{ref_unit}', [ManajemenRefUnitController::class, 'update']);
+                    Route::post('/update/{ref_unit}/store', [ManajemenRefUnitController::class, 'updateStore']);
+                    Route::post('/delete/{ref_unit}', [ManajemenRefUnitController::class, 'delete']);
                 });
 
             Route::namespace('ManajemenUraianPekerjaan')

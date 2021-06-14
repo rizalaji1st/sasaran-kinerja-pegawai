@@ -24,4 +24,8 @@ class RefUnit extends Model
         'inserted_at',
         'edited_at'
     ];
+
+    public function unit_parent(){
+        return $this->belongsTo(RefUnit::class,'id_unit_parent');
+    }
 }
