@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\UraianPekerjaan;
 use App\Models\User;
 use App\Models\RefJabatan;
+use App\Models\UraianPekerjaanJabatan;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -19,25 +20,33 @@ class ManajemenUraianPekerjaanJabatanController extends Controller
     	return view('pages.admin.manajemen_uraian_pekerjaan_jabatan.index', compact('ref_jabatans', 'uraian_pekerjaans'));
     }
 
-    public function create(){
-        
-        return view('pages.admin.manajemen_uraian_pekerjaan.create');
+    public function jabatanIndex(RefJabatan $jabatan){
+        $uraian_pekerjaans = UraianPekerjaan::all();
+
+
+        return view('pages.admin.manajemen_uraian_pekerjaan_jabatan.indexJabatan', compact('jabatan', 'uraian_pekerjaans'));
     }
 
-    public function store(Request $request, User $user){
+    public function create(RefJabatan $jabatan){
+    
+        $uraian_pekerjaans = UraianPekerjaan::all();
+
+
+        return view('pages.admin.manajemen_uraian_pekerjaan_jabatan.create', compact('uraian_pekerjaans', 'jabatan'));
+    }
+
+    public function store(Request $request, RefJabatan $jabatan){
         $data = $request->except(['_token']);
         $auth = Auth::user();
-        $uraian_pekerjaan = UraianPekerjaan::create([
-            'uraian' => $data['uraian'],
-            'keterangan' => $data['keterangan'],	
-            'poin' => (float) $data['poin'],	
+        $uraian_pekerjaan_jabatan = UraianPekerjaanJabatan::create([
+            'id_jabatan' => $jabatan->id,
+            'id_uraian_pekerjaan' => (int) $data['uraian_pekerjaan'],
             'is_active'	=> (int) $data['active'],
-            'satuan' => $data['satuan'],	
             'inserted_at' => Carbon::now(),	
             'inserted_by' => $auth->id
         ]);
 
-        return redirect('/admin/manajemen-uraian-pekerjaan')->with('success','Data Uraian Pekerjaan '.$user->name.' berhasil ditambahkan');
+        return redirect('/admin/manajemen-uraian-pekerjaan-jabatan/'.$jabatan->id)->with('success','Data Uraian Pekerjaan Jabatan berhasil ditambahkan');
     }
 
     public function update(UraianPekerjaan $uraian_pekerjaan){
@@ -60,9 +69,15 @@ class ManajemenUraianPekerjaanJabatanController extends Controller
         return redirect('/admin/manajemen-uraian-pekerjaan')->with('success','Data Uraian Pekerjaan '.$uraian_pekerjaan->uraian.' berhasil diupdate');
     }
 
-    public function delete(UraianPekerjaan $uraian_pekerjaan){
-        $uraian_pekerjaan->delete();
+    public function delete(UraianPekerjaanJabatan $uraian_pekerjaan_jabatan){
+        $uraian_pekerjaan_jabatan->is_active = false;
+        $uraian_pekerjaan_jabatan->save();
+        return redirect('/admin/manajemen-uraian-pekerjaan-jabatan/'.$uraian_pekerjaan_jabatan->jabatan->id)->with('success','Data Uraian Pekerjaan Jabatan berhasil dinonaktifkan');
+    }
 
-        return redirect('/admin/manajemen-uraian-pekerjaan')->with('success','Data Uraian Pekerjaan berhasil dihapus');
+    public function undelete(UraianPekerjaanJabatan $uraian_pekerjaan_jabatan){
+        $uraian_pekerjaan_jabatan->is_active = true;
+        $uraian_pekerjaan_jabatan->save();
+        return redirect('/admin/manajemen-uraian-pekerjaan-jabatan/'.$uraian_pekerjaan_jabatan->jabatan->id)->with('success','Data Uraian Pekerjaan Jabatan berhasil diaktifkan');
     }
 }
