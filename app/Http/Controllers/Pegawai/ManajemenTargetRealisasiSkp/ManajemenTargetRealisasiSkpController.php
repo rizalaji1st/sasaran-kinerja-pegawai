@@ -24,26 +24,29 @@ class ManajemenTargetRealisasiSkpController extends Controller
         $pegawais = Pegawai::all();
         $refJabatan = RefJabatan::all();
         $user = Auth::user();
-        $skp_targets = SkpTarget::where([['id_pegawai', $user->pegawai->id],['id_periode', $periode->id]])->get();
+        $skp_targets = SkpTarget::all();
 
         return view('pages.pegawai.manajemen_target_realisasi_skp.periode', compact('skp_targets','user', 'periode','pegawais','refJabatan'));
     }
 
     public function store(Request $request){
         $data = $request->except(['_token']);
-        dd($data);
         $auth = Auth::user();
-        $uraian_pekerjaan = UraianPekerjaan::create([
-            'uraian' => $data['uraian'],
-            'keterangan' => $data['keterangan'],	
-            'poin' => (float) $data['poin'],	
-            'is_active'	=> (int) $data['active'],
-            'satuan' => $data['satuan'],	
+        $skp_target = SkpTarget::create([
+            'id_pegawai' => $data['pegawai'],
+            'id_uraian_pekerjaan_jabatan' => $data['uraian_pekerjaan_jabatan'],	
+            'jml_target'	=> (int) $data['jml_target'],
+            'id_periode' => (float) $data['periode'],
             'inserted_at' => Carbon::now(),	
             'inserted_by' => $auth->id
         ]);
 
-        return redirect('/admin/manajemen-uraian-pekerjaan')->with('success','Data Uraian Pekerjaan '.$user->name.' berhasil ditambahkan');
+        return redirect('/pegawai/manajemen-target-realisasi-skp/periode/'.$skp_target->id_periode)->with('success','Data target berhasil ditambahkan');
+    }
+
+    public function delete(SkpTarget $skp_target){
+        $skp_target->delete();
+        return redirect('/pegawai/manajemen-target-realisasi-skp/periode/'.$skp_target->id_periode)->with('success','Data target berhasil dihapus');
     }
 
 }

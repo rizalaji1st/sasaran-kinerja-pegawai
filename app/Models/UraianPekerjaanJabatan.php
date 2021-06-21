@@ -30,5 +30,11 @@ class UraianPekerjaanJabatan extends Model
         return $this->hasOne(RefJabatan::class, 'id', 'id_jabatan');
 
     }
+
+    public function uraian_pekerjaan(){
+
+        return $this->hasOne(UraianPekerjaan::class, 'id', 'id_uraian_pekerjaan');
+
+    }
 }
 

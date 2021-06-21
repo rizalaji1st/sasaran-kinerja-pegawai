@@ -24,4 +24,13 @@ class SkpTarget extends Model
         'inserted_at',
         'edited_at'
     ];
+
+    public function pegawai(){
+        return $this->hasOne(Pegawai::class, 'id', 'id_pegawai');
+    }
+
+    public function uraian_pekerjaan_jabatan(){
+        return $this->hasOne(UraianPekerjaanJabatan::class, 'id', 'id_uraian_pekerjaan_jabatan');
+    }
+    
 }

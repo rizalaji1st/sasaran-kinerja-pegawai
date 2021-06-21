@@ -17,6 +17,8 @@ class SkpRealisasi extends Model
 		'jml_realisasi',
 		'keterangan',
         'path_bukti',
+        'tanggal_awal',
+        'tanggal_akhir',
         'inserted_by',
         'edited_by'
 	];    
@@ -25,4 +27,10 @@ class SkpRealisasi extends Model
         'inserted_at',
         'edited_at'
     ];
+
+    public function skp_target(){
+
+        return $this->hasOne(SkpTarget::class, 'id', 'id_skp_target');
+
+    }
 }

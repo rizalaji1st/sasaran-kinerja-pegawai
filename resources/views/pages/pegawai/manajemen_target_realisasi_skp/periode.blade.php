@@ -27,7 +27,7 @@
                             <option value="">-- Pilih Uraian Pekerjaan Jabatan --</option>
                             @foreach ($refJabatan as $jabatan)
                                 @foreach ($jabatan->uraian_pekerjaans as $uraian_pekerjaan)
-                                    <option value="{{$jabatan->id}}-{{$uraian_pekerjaan->id}}">{{$jabatan->nama}} | {{$uraian_pekerjaan->uraian}}</option>
+                                    <option value="{{$uraian_pekerjaan->pivot->id}}">{{$jabatan->nama}} | {{$uraian_pekerjaan->uraian}}</option>
                                 @endforeach
                             @endforeach
                         </select>
@@ -43,16 +43,12 @@
     </div>
     <!-- Default box -->
     <div class="container-fluid card p-4">
-        <div>
-            <a href="{{url('/pegawai/manajemen-target/create')}}" class="btn btn-success">Tambah Target</a>
-        </div>
-        <hr>
         <table class="table" id="myTable">
             <thead class="thead-dark">
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Uraian Pekerjaan</th>
+                <th scope="col">Nama Pegawai</th>
+                <th scope="col">Jabatan | Uraian Pekerjaan</th>
                 <th scope="col">Jumlah Target</th>
                 <th scope="col">Aksi</th>
               </tr>
@@ -61,11 +57,15 @@
               @foreach ($skp_targets as $skp_target)
                   <tr>
                     <th scope="row">{{$loop->iteration}}</th>
-                    <th>{{$skp_target->nama}}</th>
-                    <th></th>
-                    <th></th>
+                    <th>{{$skp_target->pegawai->nama}}</th>
+                    <th>{{$skp_target->uraian_pekerjaan_jabatan->jabatan->nama}} | {{$skp_target->uraian_pekerjaan_jabatan->uraian_pekerjaan->uraian}}</th>
+                    <th>{{$skp_target->jml_target}} {{$skp_target->uraian_pekerjaan_jabatan->uraian_pekerjaan->satuan}}</th>
                     <th>
-                        <a href="{{url('pegawai/manajemen-target-realisasi-skp/'.$periode->id)}}" class="btn btn-primary btn-sm">Lihat</a>
+                        <a href="{{url('pegawai/manajemen-realisasi-skp/'.$skp_target->id)}}" class="btn btn-primary btn-sm">Realisasi</a>
+                        <button class="btn btn-sm btn-danger" onclick="sweetDelete('{{$skp_target->id}}')">Delete</button> 
+                            <form method="POST" action="{{url('/pegawai/manajemen-target-realisasi-skp/delete/'.$skp_target->id)}}" id="delete{{$skp_target->id}}">
+                                @csrf
+                            </form>
                     </th>
                   </tr>
               @endforeach

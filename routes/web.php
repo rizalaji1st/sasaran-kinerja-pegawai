@@ -117,7 +117,7 @@ Route::namespace('Admin')
 Route::namespace('Pegawai')
         ->prefix('pegawai')
         ->name('pegawai.')
-        ->middleware('can:are-pegawai')
+        ->middleware('can:admin-pegawai')
         ->group(function (){
             Route::namespace('ManajemenTargetRealisasiSkp')
                 ->prefix('manajemen-target-realisasi-skp')
@@ -126,15 +126,19 @@ Route::namespace('Pegawai')
                     Route::get('/', [ManajemenTargetRealisasiSkpController::class, 'index']);
                     Route::get('/periode/{periode}', [ManajemenTargetRealisasiSkpController::class, 'periode']);
                     Route::post('/target/create/store', [ManajemenTargetRealisasiSkpController::class, 'store']);
+                    Route::post('/delete/{skp_target}', [ManajemenTargetRealisasiSkpController::class, 'delete']);
                 });
-            // Route::namespace('ManajemenTargetRealisasiSkp')
-            //     ->prefix('manajemen-target')
-            //     ->name('manajemen-target-skp.')
-            //     ->group(function(){
-            //         Route::get('/create', [ManajemenTargetSkpController::class, 'create']);
-            //         Route::post('/create/store', [ManajemenTargetSkpController::class, 'store']);
-            //         Route::get('/update/{uraian_pekerjaan_jabatan}', [ManajemenTargetSkpController::class, 'update']);
-            //         Route::post('/update/{uraian_pekerjaan_jabatan}/store', [ManajemenTargetSkpController::class, 'updateStore']);
-            //         Route::post('/delete/{uraian_pekerjaan_jabatan}', [ManajemenTargetSkpController::class, 'delete']);
-            //     });     
+                
+            Route::namespace('ManajemenRealisasiSkp')
+                ->prefix('manajemen-realisasi-skp')
+                ->name('manajemen-realisasi-skp.')
+                ->group(function(){
+                    Route::get('/{skp_target}', [ManajemenRealisasiSkpController::class, 'index']);
+                    Route::get('/{skp_target}/create', [ManajemenRealisasiSkpController::class, 'create']);
+                    Route::post('/{skp_target}/create/store', [ManajemenRealisasiSkpController::class, 'store']);
+                    Route::get('/{skp_realisasi}/bukti', [ManajemenRealisasiSkpController::class, 'bukti']);
+                    Route::post('/{skp_realisasi}/delete', [ManajemenRealisasiSkpController::class, 'delete']);
+                    Route::get('/{skp_realisasi}/edit', [ManajemenRealisasiSkpController::class, 'update']);
+                    Route::post('/{skp_realisasi}/update/store', [ManajemenRealisasiSkpController::class, 'updateStore']);
+                });
         });
