@@ -7,7 +7,11 @@ use App\Http\Controllers\Admin\ManajemenRefUnit\ManajemenRefUnitController;
 use App\Http\Controllers\Admin\ManajemenRefJabatan\ManajemenRefJabatanController;
 use App\Http\Controllers\Admin\ManajemenPegawai\ManajemenPegawaiController;
 use App\Http\Controllers\Admin\ManajemenUraianPekerjaan\ManajemenUraianPekerjaanController;
+use App\Http\Controllers\Admin\ManajemenTargetSkpPegawai\ManajemenTargetSkpPegawaiController;
 use App\Http\Controllers\Admin\ManajemenUraianPekerjaanJabatan\ManajemenUraianPekerjaanJabatanController;
+use App\Http\Controllers\Pegawai\ManajemenTargetRealisasiSkp\ManajemenTargetRealisasiSkpController;
+use App\Http\Controllers\Pegawai\ManajemenTargetRealisasiSkp\ManajemenRealisasiSkpController;
+use App\Http\Controllers\Pegawai\ManajemenTargetRealisasiSkp\ManajemenTargetSkpController;
 
 
 /*
@@ -106,4 +110,29 @@ Route::namespace('Admin')
                     Route::post('/delete/{uraian_pekerjaan_jabatan}', [ManajemenUraianPekerjaanJabatanController::class, 'delete']);
                 });
                 
+        });
+
+Route::namespace('Pegawai')
+        ->prefix('pegawai')
+        ->name('pegawai.')
+        ->middleware('can:are-pegawai')
+        ->group(function (){
+            Route::namespace('ManajemenTargetRealisasiSkp')
+                ->prefix('manajemen-target-realisasi-skp')
+                ->name('manajemen-target-realisasi-skp.')
+                ->group(function(){
+                    Route::get('/', [ManajemenTargetRealisasiSkpController::class, 'index']);
+                    Route::get('/periode/{periode}', [ManajemenTargetRealisasiSkpController::class, 'periode']);
+                    Route::post('/target/create/store', [ManajemenTargetRealisasiSkpController::class, 'store']);
+                });
+            // Route::namespace('ManajemenTargetRealisasiSkp')
+            //     ->prefix('manajemen-target')
+            //     ->name('manajemen-target-skp.')
+            //     ->group(function(){
+            //         Route::get('/create', [ManajemenTargetSkpController::class, 'create']);
+            //         Route::post('/create/store', [ManajemenTargetSkpController::class, 'store']);
+            //         Route::get('/update/{uraian_pekerjaan_jabatan}', [ManajemenTargetSkpController::class, 'update']);
+            //         Route::post('/update/{uraian_pekerjaan_jabatan}/store', [ManajemenTargetSkpController::class, 'updateStore']);
+            //         Route::post('/delete/{uraian_pekerjaan_jabatan}', [ManajemenTargetSkpController::class, 'delete']);
+            //     });     
         });

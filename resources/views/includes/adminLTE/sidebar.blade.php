@@ -81,6 +81,18 @@
               </a>
             </li>
             
+            
+          @endcan
+          @can('are-pegawai')
+            <li class="nav-header">Menu Khusus Pegawai</li>
+            <li class="nav-item @yield('manajemenTargetRealisasiSkpActive')">
+              <a href="{{url('/pegawai/manajemen-target-realisasi-skp')}}" class="nav-link">
+                <i class="fas fa-bullseye nav-icon"></i>                
+                <p>
+                  Manajemen Target & Realisasi SKP
+                </p>
+              </a>
+            </li>
           @endcan
         </ul>
       </nav>
