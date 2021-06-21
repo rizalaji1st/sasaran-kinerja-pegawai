@@ -32,7 +32,6 @@ class UraianPekerjaan extends Model
     }
 
     public function jabatans(){
-		return $this->belongsToMany(RefJabatan::class, 'uraian_pekerjaan_jabatan','id_uraian_pekerjaan','id_jabatan');
+		return $this->belongsToMany(RefJabatan::class, 'uraian_pekerjaan_jabatan','id_uraian_pekerjaan','id_jabatan')->withPivot(['id']);
 	}
-    
 }

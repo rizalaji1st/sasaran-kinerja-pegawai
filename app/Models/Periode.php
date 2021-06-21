@@ -13,14 +13,19 @@ class Periode extends Model
 	protected $primaryKey = 'id';
 	protected $fillable = [
 		'nama',
+		'tanggal_awal',
+		'tanggal_akhir',
         'inserted_by',
         'edited_by'
 	];    
 
     protected $dates = [
-        'tanggal_awal',
-        'tanggal_akhir',
         'inserted_at',
         'edited_at'
     ];
+
+	public function periode(){
+        return $this->belongsTo(Periode::class);
+    }
+    
 }

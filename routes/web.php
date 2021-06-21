@@ -103,11 +103,13 @@ Route::namespace('Admin')
                 ->name('manajemen-uraian-pekerjaan-jabatan.')
                 ->group(function(){
                     Route::get('/', [ManajemenUraianPekerjaanJabatanController::class, 'index']);
-                    Route::get('/create', [ManajemenUraianPekerjaanJabatanController::class, 'create']);
-                    Route::post('/create/store', [ManajemenUraianPekerjaanJabatanController::class, 'store']);
+                    Route::get('/{jabatan}', [ManajemenUraianPekerjaanJabatanController::class, 'jabatanIndex']);
+                    Route::get('/create/{jabatan}', [ManajemenUraianPekerjaanJabatanController::class, 'create']);
+                    Route::post('/create/{jabatan}/store', [ManajemenUraianPekerjaanJabatanController::class, 'store']);
                     Route::get('/update/{uraian_pekerjaan_jabatan}', [ManajemenUraianPekerjaanJabatanController::class, 'update']);
                     Route::post('/update/{uraian_pekerjaan_jabatan}/store', [ManajemenUraianPekerjaanJabatanController::class, 'updateStore']);
                     Route::post('/delete/{uraian_pekerjaan_jabatan}', [ManajemenUraianPekerjaanJabatanController::class, 'delete']);
+                    Route::post('/undelete/{uraian_pekerjaan_jabatan}', [ManajemenUraianPekerjaanJabatanController::class, 'undelete']);
                 });
                 
         });

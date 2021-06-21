@@ -7,16 +7,12 @@
 @section('content')
     <!-- Default box -->
     <div class="container-fluid card p-4">
-        <div>
-            <a class="btn btn-success" href="{{url('/admin/manajemen-uraian-pekerjaan-jabatan/create')}}" >Tambah Uraian Pekerjaan Jabatan</a>
-        </div>
         <hr>
         <table class="table" id="myTable">
             <thead class="thead-dark">
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Jabatan</th>
-                <th scope="col">Uraian Pekerjaan</th>
                 <th scope="col">Aksi</th>
 
               </tr>
@@ -27,14 +23,8 @@
                     <th scope="row">{{$loop->iteration}}</th>
                     <th>{{$ref_jabatan->nama}}</th>
                     <th>
-                        <ol>
-                        @foreach ($ref_jabatan->uraian_pekerjaans as $uraian_pekerjaan)
-                            <li>{{ $uraian_pekerjaan->uraian }}</li>
-                        @endforeach
-                        </ol>
-                    </th>
-                    <th>
-                        
+                       <a class="btn btn-sm btn-warning" href="{{url('admin/manajemen-uraian-pekerjaan-jabatan/'.$ref_jabatan->id)}}">Edit
+                       </a>
                     </th>
                   </tr>
               @endforeach
@@ -48,7 +38,7 @@
             $('#myTable').DataTable();
         } );
 
-        function sweetDelete(uraian_pekerjaan, ref_jabatan){
+        function sweetDelete(uraian_pekerjaans){
             swal({
                 title: "Konfirmasi",
                 text: "Apakah anda yakin?",
@@ -58,7 +48,7 @@
                 })
                 .then((willDelete) => {
                 if (willDelete) {
-                    document.getElementById("delete"+uraian_pekerjaan + ref_jabatan).submit();
+                    document.getElementById("delete" + uraian_pekerjaans).submit();
                 } else {
                     swal("Ok");
                 }
